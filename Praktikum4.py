@@ -1,16 +1,15 @@
-# Memasukkan data
-a = 0
+# Deklarasi
 nama = []
 nim = []
 tugas = []
 uts = []
 uas = []
 akhir = []
-jawab = input("Tambah data (y/t)?")
 mhsw = []
+jawab = input("Tambah data (y/t)?")
+a = 0
 
-
-# Looping
+# Inputan data mahasiswa
 while jawab == 'y':
     s_nama = input("Nama :")
     nama.append(s_nama)
@@ -24,10 +23,7 @@ while jawab == 'y':
     uas.append(i_uas)
     i_akhir = (i_tugas * 30/100) + (i_uts * 35/100) + (i_uas * 35/100)
     akhir.append(i_akhir)
-    jawab = input("Tambah data (y/t)?")
-    if jawab == 't':
-        break
-    a += 1
+
     mhsw.append(nama)
     mhsw.append(nim)
     mhsw.append(tugas)
@@ -35,11 +31,14 @@ while jawab == 'y':
     mhsw.append(uas)
     mhsw.append(akhir)
 
+    jawab = input("Tambah data (y/t)?")
+    if jawab == 't':
+        break
 
 # Cetak hasil
-print("=========================================================================")
-print("|No.|       Nama       |    NIM    |  Tugas  |  UTS  |  UAS  |   Akhir  |")
-print("=========================================================================")
+print("========================================================================")
+print("|No.|       Nama       |    NIM    |  Tugas  |  UTS  |  UAS  |  Akhir  |")
+print("========================================================================")
 for a in range(0, len(mhsw[a])):
     print('|',a+1,'|       ',nama[a],'       |  ',nim[a],'  |  ',tugas[a],'  |  ',uts[a],'  |  ',uas[a],'  |  ',akhir[a],'  |')
-print("=========================================================================")
+print("========================================================================")
