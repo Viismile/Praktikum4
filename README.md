@@ -58,14 +58,13 @@ uts = []
 uas = []
 akhir = []
 mhsw = []
-jawab = input("Tambah data (y/t)?")
 a = 0
 ```
-Untuk variable 'jawab' dibuat untuk mengatur perulangan, dan variable 'a' sebagai penghitung nomor.
+Variable 'a' sebagai penghitung nomor.
 
 2.) Lalu kita membuat kondisi perulangan dan statement yang akan dijalankan ketika perulangan terjadi.
 ```python
-while jawab == 'y':
+while True:
     s_nama = input("Nama :")
     nama.append(s_nama)
     i_nim = int(input("NIM :"))
