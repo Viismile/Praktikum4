@@ -1,43 +1,25 @@
-# Deklarasi
-nama = []
-nim = []
-tugas = []
-uts = []
-uas = []
-akhir = []
-mhsw = []
-a = 0
+nilai = []
+ulang = True
 
-# Inputan data mahasiswa
-while True:
-    s_nama = input("Nama :")
-    nama.append(s_nama)
-    i_nim = int(input("NIM :"))
-    nim.append(i_nim)
-    i_tugas = int(input("Nilai Tugas :"))
-    tugas.append(i_tugas)
-    i_uts = int(input("Nilai UTS :"))
-    uts.append(i_uts)
-    i_uas = int(input("Nilai UAS :"))
-    uas.append(i_uas)
-    i_akhir = (i_tugas * 30/100) + (i_uts * 35/100) + (i_uas * 35/100)
-    akhir.append(i_akhir)
+while ulang:
+    nama = input("Masukkan Nama: ")
+    nim = input("Masukkan NIM: ")
+    tugas = int(input("Masukkan Nilai Tugas: "))
+    uts = int(input("Masukkan Nilai UTS: "))
+    uas = int(input("Masukkan Nilai UTS: "))
+    akhir = (tugas * 30/100) + (uts * 35/100) + (uas * 35/100)
 
-    mhsw.append(nama)
-    mhsw.append(nim)
-    mhsw.append(tugas)
-    mhsw.append(uts)
-    mhsw.append(uas)
-    mhsw.append(akhir)
+    nilai.append([nama, nim, tugas, uts, uas, int(akhir)])
+    if (input("Tambah data (y/t)?") == 't'):
+        ulang = False
 
-    jawab = input("Tambah data (y/t)?")
-    if jawab == 't':
-        break
-
-# Cetak hasil
-print("========================================================================")
-print("|No.|       Nama       |    NIM    |  Tugas  |  UTS  |  UAS  |  Akhir  |")
-print("========================================================================")
-for a in range(0, len(mhsw[a])):
-    print('|',a+1,'|       ',nama[a],'       |  ',nim[a],'  |  ',tugas[a],'  |  ',uts[a],'  |  ',uas[a],'  |  ',akhir[a],'  |')
-print("========================================================================")
+print("\n                      Daftar Nilai Mahasiswa")
+print("==================================================================")
+print("|No. |     Nama     |    NIM    | Tugas |  UTS  |  UAS  |  Akhir |")
+print("==================================================================")
+i = 0
+for item in nilai:
+    i += 1
+    print("| {no:2d} | {nama:12s} | {nim:9s} | {tugas:5d} | {uts:5d} | {uas:5d} | {akhir:6.2f} |"
+          .format(no=i, nama=item[0], nim=item[1], tugas=item[2], uts=item[3], uas=item[4], akhir=item[5]))
+print("==================================================================")
