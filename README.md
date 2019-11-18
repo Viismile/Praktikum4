@@ -12,10 +12,9 @@ uts = []
 uas = []
 akhir = []
 mhsw = []
-jawab = input("Tambah data (y/t)?")
 a = 0
 
-while jawab == 'y':
+while True:
     s_nama = input("Nama :")
     nama.append(s_nama)
     i_nim = int(input("NIM :"))
